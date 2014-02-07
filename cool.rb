@@ -38,7 +38,7 @@ loop do
         puts "#{data[0]}"
   else
 #        puts "Sending a little something.."
-        udp_in.send("*thump*", 0, peer, 6311)
+        udp_in.send("*thump*", 0, remote_host, 6311)
 #        udp_in.send(Time.now.to_s, 0, remote_host, 6311)
   end
 end
