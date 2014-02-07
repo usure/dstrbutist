@@ -1,2 +1,2 @@
-worker: bundle exec ruby peer1.rb
+worker: bundle exec ruby cool.rb
 

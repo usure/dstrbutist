@@ -2,15 +2,15 @@ require 'socket'
 require 'openssl'
 require 'digest/sha2'
 
-payload = "Hi"
-sha256 = Digest::SHA2.new(256)
-aes = OpenSSL::Cipher.new("AES-256-CFB")
-iv = rand.to_s
-key = sha256.digest("Bond, James Bond")
-aes.encrypt
-aes.key = key
-aes.iv = iv
-encrypted_data = aes.update(payload) + aes.final
+#payload = "Hi"
+#sha256 = Digest::SHA2.new(256)
+#aes = OpenSSL::Cipher.new("AES-256-CFB")
+#iv = rand.to_s
+#key = sha256.digest("Bond, James Bond")
+#aes.encrypt
+#aes.key = key
+#aes.iv = iv
+#encrypted_data = aes.update(payload) + aes.final
 
 
 peers = File.foreach('peers')
@@ -38,7 +38,7 @@ loop do
         puts "#{data[0]}"
   else
 #        puts "Sending a little something.."
-        udp_in.send(encrypted_data, 0, peer, 6311)
+        udp_in.send("*thump*", 0, peer, 6311)
 #        udp_in.send(Time.now.to_s, 0, remote_host, 6311)
   end
 end
